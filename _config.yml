@@ -1,0 +1,10 @@
+title: Mourtada.se
+url: https://www.mourtada.se
+name: Mourtada.se
+description: I'm a developer. I love coding.
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
