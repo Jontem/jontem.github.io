@@ -3,7 +3,6 @@ title: Nextcloud with freenas iocage
 date: 2018-07-11T00:00:00+00:00
 layout: post
 permalink: /nextcloud-freenas-iocage/
-crosspost_to_medium: true
 categories:
   - freenas
 tags:
