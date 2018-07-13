@@ -153,4 +153,5 @@ mysql -e "FLUSH PRIVILEGES;"
 mysql nextcloud < nextcloud-sqlbkp.bak
 {% endhighlight %}
 
-Now we should be able to access our nextcloud installation and upgrade to version 11. When this is done we can download version 12. Don't forget to update our apache configuration to the new version and update add the symlinks. Then do the same for version 13.
+## Finally
+Now we should be able to access our nextcloud installation([http://yourip/nextcloud](http://yourip/nextcloud)) and upgrade to version 11. When this is done we can download version 12. Don't forget to update your apache configuration to the new version and add the symlinks. Then do the same for version 13.
