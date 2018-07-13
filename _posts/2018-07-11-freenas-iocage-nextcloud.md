@@ -3,6 +3,7 @@ title: Nextcloud with freenas iocage
 date: 2018-07-11T00:00:00+00:00
 layout: post
 permalink: /nextcloud-freenas-iocage/
+crosspost_to_medium: true
 categories:
   - freenas
 tags:
@@ -17,7 +18,7 @@ I was running nextcloud 10 which was deployed as a freenas plugin. Now I wanted 
 Iocage is the new jail manager backend which will replace the old warden backend in freenas. To use iocage you'll need to use the new freenas gui or use the command-line. I started with the gui but soon realized that all features is not yet supported from the gui so to proceed we'll use the command-line.
 
 Useful iocage commands:
-{% highlight bash %}
+```
 # List jails setup with iocage
 iocage list
 
@@ -26,7 +27,7 @@ iocage start <jail_name>
 
 # Start a console inside jail
 iocage console <jail_name>
-{% endhighlight %}
+```
 
 
 ## The plan
@@ -35,25 +36,25 @@ Since you can't upgrade nextcloud between multiple major versions we'll have to 
 ## Steps
 First ssh into to your freenas box so we can create our new jail and start it.
 
-{% highlight bash %}
+```
 iocage create --name nextcloud --release 11.1-RELEASE vnet=on dhcp=on bpf=yes
 iocage start nextcloud
-{% endhighlight %}
+```
 
 This will create a new jail named `nextcloud` with a network interface with dhcp.
 
 Now we need to console in to our jail. Then we're going to install the nextcloud package which will give us the necessary php packages. I tried going with php7 but nextcloud 11 didn't support it.
 
-{% highlight bash %}
+```
 pkg update
 pkg install nextcloud-php56-13.0.4
-{% endhighlight %}
+```
 
 Now we will install apache 2.4 and mysql server
-{% highlight bash %}
+```
 pkg install apache24
 pkg install mysql56-server-5.6.40
-{% endhighlight %}
+```
 
 Now we need to update `/etc/rc.conf` so we can start apache and mysql. Add this to the end.
 
@@ -64,27 +65,27 @@ mysql_enable="YES"
 
 Next we're going to remove the nextcloud 13 version that pkg installed for us.
 
-{% highlight bash %}
+```
 rm -rf /usr/local/www/nextcloud/
-{% endhighlight %}
+```
 
 Now download version 11. Old versions can be found here https://nextcloud.com/changelog/. Unpack it and rename the folder.
 
-{% highlight bash %}
+```
 curl https://download.nextcloud.com/server/releases/nextcloud-11.0.8.tar.bz2 -o nextcloud-11.0.8.tar.bz2
 tar jxf nextcloud-11.0.8.tar.bz2
 mv nextcloud nextcloud11
-{% endhighlight %}
+```
 
 Lets make some apache configurations. First we'll enable php
 
-{% highlight bash %}
+```
 # Install php module
 pkg install mod_php56-5.6.36_1
 
 # Add configuration
 vi /usr/local/etc/apache24/Includes/php.conf
-{% endhighlight %}
+```
 
 Add this
 ```
@@ -97,9 +98,9 @@ Add this
 ```
 
 Now we'll add configuration for nextcloud
-{% highlight bash %}
+```
 vi /usr/local/etc/apache24/Includes/php.conf
-{% endhighlight %}
+```
 
 Add this. Notice that we point to our nextcloud 11 installation
 
@@ -114,15 +115,15 @@ AcceptPathInfo On
 
 It's a good idea to create a own dataset for your `config` and `data` directory. We will add them to our jail and restart
 
-{% highlight bash %}
+```
 iocage fstab -a nextcloud "/path/to/dataset/with/nextcloud/config  /nextcloud_config  nullfs  rw  0  0"
 iocage fstab -a nextcloud "/path/to/dataset/with/nextcloud/data  /nextcloud_data  nullfs  rw  0  0"
 iocage restart nextcloud
-{% endhighlight %}
+```
 
 Now copy your config and data folders contents to your newly created datasets. Then we'll symlink the directories in our nextcloud 11 installation directory
 
-{% highlight bash %}
+```
 # On your freenas host sync old config and data directories
 rsync -avx /path/to/old/nextcloud/config/ /path/to/new/nextcloud/config/
 rsync -avx /path/to/old/nextcloud/data/ /path/to/new/nextcloud/data/
@@ -133,11 +134,11 @@ rm -rf config
 rm -rf data
 ln -s /nextcloud_config config
 ln -s /nextcloud_data data
-{% endhighlight %}
+```
 
 Lets get a backup from our old nextcloud installation
 
-{% highlight bash %}
+```
 # On old installation, then copy to folder accessible from new jail
 mysqldump --single-transaction nextcloud > nextcloud-sqlbkp_`date +"%Y%m%d"`.bak
 
@@ -151,7 +152,7 @@ mysql -e "FLUSH PRIVILEGES;"
 
 # Then import the database
 mysql nextcloud < nextcloud-sqlbkp.bak
-{% endhighlight %}
+```
 
 ## Finally
 Now we should be able to access our nextcloud installation([http://yourip/nextcloud](http://yourip/nextcloud)) and upgrade to version 11. When this is done we can download version 12. Don't forget to update your apache configuration to the new version and add the symlinks. Then do the same for version 13.
