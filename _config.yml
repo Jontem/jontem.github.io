@@ -11,3 +11,7 @@ plugins:
 
 jekyll-crosspost_to_medium:
   enabled: false
+
+twitter_username: jmourtada
+github_username:  jontem
+linkedin_username: jonathanmourtada
