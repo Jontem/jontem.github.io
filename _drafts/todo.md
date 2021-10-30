@@ -12,6 +12,7 @@ tags:
 ---
 
 * General purpose registers
+* Calling c standard library printf
 * Constants
 * Sections
 * the move instruction
