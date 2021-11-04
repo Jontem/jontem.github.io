@@ -27,3 +27,10 @@ Most of the work of a CPU is to process data. But reading and storing data from 
 * rsp
 * rbp
 * r8-r15
+
+These registers are used for inputs and outputs for different CPU instruction. For example in the application binary interface(ABI) for linux 64-bit the `rax` register is used for specifying the syscall number and it's also used for storing the return value of functions. The arguments for a function is then stored in order `rdi`(arg1), `rsi`(arg2), `rdx`(arg3) and so on. The image below shows the calling conventions for syscalls on different architectures.
+
+![Linux 64-bit ABI](/assets/linux_abi.png)
+
+## Special purpose registers
+
