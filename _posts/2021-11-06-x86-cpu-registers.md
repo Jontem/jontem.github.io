@@ -3,7 +3,7 @@ title: x86 CPU registers
 description: In this post I will briefly explain some of the x86 CPU registers.
 date: 2021-11-06T00:00:00+00:00
 layout: post
-permalink: /x86 CPU registers/
+permalink: /x86-cpu-registers/
 categories:
   - assembly
 tags:
@@ -36,7 +36,7 @@ The image below shows the calling conventions for syscalls on different CPU arch
 
 ## Special purpose registers
 
-While the values stored in a general purpose register has no special meaning to the processor special purpose registers holds state about the program. 
+While the values stored in a general purpose register has no special meaning to the processor, special purpose registers holds state about the program. 
 
 Here are examples of special purpose registers:
 
