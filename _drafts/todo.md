@@ -11,10 +11,7 @@ tags:
   - assembly
 ---
 
-* General purpose registers
 * Calling c standard library printf
-* Constants
-* Sections
-* the move instruction
-* intel syntax
+* gcc
+* Making functions
 * x86 little endian
