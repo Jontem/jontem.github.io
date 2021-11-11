@@ -54,17 +54,17 @@ $ ./a.out
   global main
 ```
 
-The `default rel` is a nasm assembly directive. It tells nasm to use rip relative adressing. In short this makes the assembler to rewrite the references in instructions that uses our `fmt` and `message` constants relative to the instruction pointer. This is needed because default for the linker in 64-bit linux is to use position-independent code.
+The `default rel` is a nasm assembly directive. It tells nasm to use rip relative adressing. In short it tells the assembler to rewrite the references in instructions that uses our `fmt` and `message` constants relative to the instruction pointer. This is needed because default for the linker in 64-bit linux is to use position-independent code.
 
 The `extern printf` part tells the assembler that this symbol exists outside of this file and needs to be referenced at a later stage.
 
-Last row here is `global main` which is needed for gcc and it's the entry point for libc.
+Last row here is `global main` which is needed for gcc and it's the entrypoint for libc.
 
 ## main
 
 First we need to align the stack because the x86_64 ABI requires the stackpointer to always be 16-byte aligned so therefor we push a value to it.
 
-Then we prepare our registers for the function call to `printf` and then we call `printf wrt ..plt`. What happens here is that we load printf from the libc shared library and this is a little bit complicated but very briefly it says `call printf with relation to procedure linkage table`. The PCL will then the first time `printf` is called resolve where `printf` is in memory with the help of the dynamic link loader in linux. It then stores that adress for future calls. We could link `printf` statically which would copy the code of `printf` into the executable.
+Then we prepare our registers for the function call to `printf` and then we call `printf wrt ..plt`. What happens here is that we load printf from the libc shared library and this is a little bit complicated. But very briefly it says `call printf with relation to procedure linkage table`. The PCL will then the first time `printf` is called resolve where `printf` is in memory with the help of the dynamic link loader in linux. It then stores that adress for future calls. We could link `printf` statically which would copy the code of `printf` into the executable.
 
 Lastly we need to set return value of `main` to zero and do a `ret`.
 
