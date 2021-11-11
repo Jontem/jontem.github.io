@@ -1,9 +1,9 @@
 ---
-title: Calling printf from C standard library from assembly
-description: In this post I will show an example how to call printf from the C standard library from assembly code
+title: Calling printf from the C standard library in assembly
+description: In this post I will show an example how to call the printf function from the C standard library in assembly
 date: 2021-11-11T00:00:00+00:00
 layout: post
-permalink: /calling-printf-from-c-standard-library-from-assembly/
+permalink: /calling-printf-from-the-c-standard-library-in-assembly/
 categories:
   - assembly
 tags:
@@ -12,7 +12,7 @@ tags:
   - assembly
 ---
 
-This is the fourth post about x86 assembly. In this post I will show an example how to call printf from the C standard library from assembly code.
+This is the fourth post about x86 assembly. In this post I will show an example how to call the printf function from the C standard library in assembly code.
 
 
 ```asm

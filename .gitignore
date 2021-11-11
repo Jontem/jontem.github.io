@@ -4,3 +4,4 @@ _site
 .vscode
 .jekyll-cache
 publish-medium.sh
+vendor/
