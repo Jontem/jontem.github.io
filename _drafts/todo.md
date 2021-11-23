@@ -11,7 +11,6 @@ tags:
   - assembly
 ---
 
-* Calling c standard library printf
 * gcc
 * Making functions
 * x86 little endian
