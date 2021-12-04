@@ -12,5 +12,4 @@ tags:
 ---
 
 * gcc
-* Making functions
 * x86 little endian
