@@ -3,7 +3,7 @@ title: Most popular posts of 2021
 description: My most popular posts of 2021
 date: 2022-01-01T00:00:00+00:00
 layout: post
-permalink: /most-popular-post-of-2021/
+permalink: /most-popular-posts-of-2021/
 ---
 
 This fall I decided to start blogging again and my plan is to continue writing blog posts more frequently in 2022. But I thought it would be fun to share which posts that has seen most traffic this year.
