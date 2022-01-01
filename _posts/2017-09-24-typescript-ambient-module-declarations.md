@@ -68,21 +68,14 @@ What TypeScript will do is by default to try and lookup `my-module`. It will try
 
 Sometimes you don&#8217;t wan&#8217;t to publish declaration files to definitelytyped and have folder with custom type declarations and therefore inform TypeScript to look for declarations in other folder than node_modules/@types. This can be done with the help of `compilerOption` `paths`.
 
+```json
 {
-      
-"baseUrl": ".",
-      
-"paths": {
-          
-"*": [
-              
-"custom-typings/*"
-          
-]
-      
+  "baseUrl": ".",
+  "paths": {
+    "*": ["custom-typings/*"]
+  }
 }
-  
-}
+```
 
 With this configuration in `tsconfig.json` TypeScript will look for code and declaration files in the `custom-typings` folder.
 
