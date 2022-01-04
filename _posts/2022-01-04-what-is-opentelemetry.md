@@ -1,20 +1,20 @@
 ---
-title: Debug x86 assembly with GDB
-description: This is the sixth post about x86 assembly. In this post I will show how to debug your x86 assembly code with the GNU Project debugger(GDB)
-date: 2021-12-04T00:00:00+00:00
+title: What is OpenTelemetry?
+description: This is the first post in a planned blog series about OpenTelemetry.
+date: 2022-01-04T00:00:00+00:00
 layout: post
-permalink: /debug-x86-assembly-with-gdb/
+permalink: /what-is-opentelemetry/
 categories:
-  - assembly
+  - OpenTelemtry
 tags:
-  - nasm
-  - x86
-  - assembly
+  - OpenTelemetry
+  - Observability
+  - Monitoring
+  - Distributed tracing
 ---
 
 This is the first post in a planned blog series about OpenTelemetry.
 
-## What is OpenTelemetry?
 OpenTelemetry is an open source observability framework which is the result of merging the projects OpenTracing and OpenCensus. It's goal is to provide language agnostic tools for telemetry data such as tracing, metrics and logging in distributed architectures.
 
 ## Signals
@@ -36,9 +36,7 @@ A metric is measurement of work being done by a service or a component in a spec
 A log entry is a text record that has a timestamp. Logs is an independant data source but can also be attached to spans.
 
 ## Baggage
-Bagagge is a mechanism for propagating observability events as name/value pairs in a distributed transaction.
+Bagagge is a mechanism for propagating observability events as name/value pairs in a distributed transaction. This can be used to store data about a trace across process-boundaries.
 
-
-
-## Data collection
-The OpenTelemtry Collector is a vendor-agnostic implementation of receiving, processing and exporting of telemetry data. This can for example be run on every node in kubernetes to collect or receive telemetry data for containers running on that node.
+## Context propagation
+Signals are built on shared a mechanism called context propagation. The context provides a way to store state and accessing data over the lifetime of a distributed transaction. Propagators are used to serialize and deserialize context over different protocols. 
