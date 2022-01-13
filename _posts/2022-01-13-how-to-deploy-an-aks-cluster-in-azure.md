@@ -15,16 +15,16 @@ tags:
 This is a guide on how to deploy a kubernetes cluster in azure(AKS). The steps below is done with az cli in a bash terminal.
 
 ## Creating a resource group
-First of all we need a resource group to deploy our resources. This is where our kubernetes cluster will be created together with our custom vnet.
+First of all we need a resource group. This is where our kubernetes cluster will be created together with our custom vnet.
 
 ```sh
 az group create --name rg-something-swedencentral-01 --location swedencentral
 ```
 
 ## Creating a custom vnet
-Then we'll create our own vnet so we can have control over the assigned IP adresses. The vnet can be created automatically if you don't have any need for specifying your own subnets. But if you want to have a hybrid cloud with connected to a on premise network you need to make sure the cloud network and on premise network doesn't collide.
+Then we'll create our own vnet so we can have control over the assigned IP adresses. The vnet can be created automatically if you don't have any need for specifying your own subnets. But if you want to have a hybrid cloud connected to a on premise network you need to make sure the cloud network and on premise network doesn't collide.
 
-Firstly you need to assign adresses to the vnet
+To create the vnet run:
 ```sh
 az network vnet create --name vnet-something-swedencentral-01 --resource-group rg-something-swedencentral-01 --address-prefixes 10.110.0.0/16
 ```
@@ -37,7 +37,7 @@ az network vnet subnet create --resource-group rg-something-swedencentral-01 --v
 ## Create a user assigned managed identity
 To use our newly created vnet and subnet the aks cluster needs to have permission to use it. Aks uses a service principal when it calls the azure api:s. A service principal is just a appid with a secret. A service principal secret by default expires after one year and you need to renew the secret. But you can also use a managed identity. A managed identity is a service principal which azure automically renews the secret every 46 days.
 
-We'll start by creating a user assigned managed identity.
+To create a managed identity run:
 ```sh
 az identity create --resource-group rg-something-swedencentral-01 --name id-aks-something-swedencentral-01
 ```
