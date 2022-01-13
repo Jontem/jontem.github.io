@@ -12,7 +12,7 @@ tags:
   - kubernetes
 ---
 
-This how to on how to deploy a kubernetes cluster in azure(AKS). The steps below is done with az cli in a bash terminal.
+This is a guide on how to deploy a kubernetes cluster in azure(AKS). The steps below is done with az cli in a bash terminal.
 
 ## Creating a resource group
 First of all we need a resource group to deploy our resources. This is where our kubernetes cluster will be created together with our custom vnet.
