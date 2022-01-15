@@ -73,7 +73,7 @@ az aks create \
 --service-cidr 10.96.0.0/16 \
 --windows-admin-username windowsuser \
 --windows-admin-password 'windowspassword' \
---api-server-authorized-ip-ranges <ALLOW_CIDR_RANGE> \
+--api-server-authorized-ip-ranges <ALLOWED_CIDR_RANGE> \
 --node-vm-size Standard_D2s_v3 \
 --node-count 2 \
 --node-resource-group rg-aks-something-swedencentral-01
