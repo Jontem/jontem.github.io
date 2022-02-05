@@ -22,10 +22,10 @@
   <script>
     function isLocalHost() {
       var hostName = window.location.hostname;
-      return hostName === "127.0.0.1" || "localhost";
+      return hostName === "127.0.0.1" || hostName === "localhost";
     }
     window.onload = () => {
-      if(isLocalHost()) {
+      if (isLocalHost()) {
         return;
       }
       var url = window.location.href;
