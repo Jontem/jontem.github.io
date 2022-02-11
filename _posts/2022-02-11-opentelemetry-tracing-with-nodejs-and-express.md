@@ -60,6 +60,7 @@ yarn add @opentelemetry/exporter-trace-otlp-grpc
 ## Setup tracing
 
 ```js
+// tracing.js
 const OpenTelemetry = require("@opentelemetry/sdk-node");
 const Resources = require("@opentelemetry/resources");
 const SemanticConventions = require("@opentelemetry/semantic-conventions");
