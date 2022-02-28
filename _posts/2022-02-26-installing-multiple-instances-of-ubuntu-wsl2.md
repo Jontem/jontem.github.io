@@ -2,7 +2,7 @@
 title: Installing multiple instances of Ubuntu in WSL2
 date: 2022-02-26T00:00:00+00:00
 layout: post
-permalink: /how-to-get-wsl2-working-inside-a-hyper-v-virtual-machine/
+permalink: /installing-multiple-instances-of-ubuntu-in-wsl2/
 categories:
   - wsl2
 tags:
