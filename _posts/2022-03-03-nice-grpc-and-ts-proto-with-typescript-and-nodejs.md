@@ -1,8 +1,8 @@
 ---
 title: nice-grpc client and ts-proto with typescript and nodejs
-date: 2022-03-02T00:00:00+00:00
+date: 2022-03-03T00:00:00+00:00
 layout: post
-permalink: /nice-grpc-and-ts-proto-with-typescript-and-nodejs/
+permalink: /nice-grpc-client-and-ts-proto-with-typescript-and-nodejs/
 categories:
   - grpc
 tags:
@@ -34,7 +34,8 @@ $ grpc_tools_node_protoc \
 --plugin=node_modules/.bin/protoc-gen-ts_proto \
 --ts_proto_out=compiled-protos \
 --ts_proto_opt=outputServices=generic-definitions,outputClientImpl=false,oneof=unions,snakeToCamel=false,esModuleInterop=true \
---proto_path=protos protos/my_service.proto
+--proto_path=protos \
+protos/my_service.proto
 ```
 
 To compile multiple protos in a folder
@@ -44,7 +45,7 @@ $ find ./protos -name *.proto -exec grpc_tools_node_protoc \
 --plugin=node_modules/.bin/protoc-gen-ts_proto \
 --ts_proto_out=compiled-protos \
 --ts_proto_opt=outputServices=generic-definitions,outputClientImpl=false,oneof=unions,snakeToCamel=false,esModuleInterop=true \
---proto_path=protos
+--proto_path=protos \
 {} \\;
 ```
 
