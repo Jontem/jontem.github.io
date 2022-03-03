@@ -26,17 +26,60 @@ $ yarn add --save-dev grpc-tools ts-proto
 ```
 
 ## Compiling protos
-To compile multiple protos in a folder
+
+Compiling a single proto file
+
 ```sh
-$ find ./packages/server/src/dhpro-service/protos -name *.proto -exec grpc_tools_node_protoc \ 
---experimental_allow_proto3_optional \ ?
+$ grpc_tools_node_protoc \
 --plugin=node_modules/.bin/protoc-gen-ts_proto \
---ts_proto_out=$npm_package_config_dhpro_proto_out_dir \
+--ts_proto_out=compiled-protos \
 --ts_proto_opt=outputServices=generic-definitions,outputClientImpl=false,oneof=unions,snakeToCamel=false,esModuleInterop=true \
---proto_path=$npm_package_config_dhpro_proto_in_dir_shared
---proto_path=$npm_package_config_dhpro_proto_in_dir {} \\;
+--proto_path=protos protos/my_service.proto
 ```
-* Getting protos
-* Generating with protoc and ts-proto (--proto-path multiple)
-* Using find for multiple proto files
-* Creating channel and a client
+
+To compile multiple protos in a folder
+
+```sh
+$ find ./protos -name *.proto -exec grpc_tools_node_protoc \
+--plugin=node_modules/.bin/protoc-gen-ts_proto \
+--ts_proto_out=compiled-protos \
+--ts_proto_opt=outputServices=generic-definitions,outputClientImpl=false,oneof=unions,snakeToCamel=false,esModuleInterop=true \
+--proto_path=protos
+{} \\;
+```
+
+## Creating channel and a client
+
+If you have the following proto file:
+
+```proto
+syntax = "proto3";
+
+package nice_grpc.example;
+
+service ExampleService {
+  rpc ExampleUnaryMethod(ExampleRequest) returns (ExampleResponse);
+}
+
+message ExampleRequest {
+  string messageRequest = 1;
+}
+message ExampleResponse {
+  string messageResponse = 1;
+}
+```
+
+Then calling the gRPC service looks like this:
+
+```ts
+import { createChannel, createClient, Client } from "nice-grpc";
+import { ExampleServiceDefinition } from "./compiled_protos/my_service";
+
+const channel = createChannel("localhost:8080");
+
+const client: Client<typeof ExampleServiceDefinition> = createClient(
+  ExampleServiceDefinition,
+  channel
+);
+const result = await client.ExampleUnaryMethod({ messageRequest: "hello" });
+```
