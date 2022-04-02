@@ -28,10 +28,48 @@ A minimal `pom.xml` needs to have a groupId, artifactId and a version. The field
 </project>
 ```
 
+## Build lifecycles
+Mavens build on the concept of lifecycles. There are three default lifecycles.
 
-* Goals
-* Phases
-* pom files
+* clean
+* default 
+* site
+
+### Phases
+A lifecycle is defined by a list build phases which can be seen as a stage in a lifecycle.
+
+These are the phases of the default lifecycle
+* validate - validates project configuration
+* compile - compiles the source code
+* test - run the tests
+* package - packages the compiled code to a distributable format. Ex a JAR file.
+* verify - verifies the ingration tests results
+* install - installs the package to a local repository
+* deploy - installs the package in a remote repository
+
+When you run `mvn package` every phase including `package` is executed sequentially in the order above.
+
+### Plugin and goals
+All of the work done by maven is done by plugins. Plugins defines goals. A goal is executed in phases which determines the order goals get executed in. For example the `compile` goal comes from the `compiler` plugin and is attached to the `compile` phase.
+
+## Standard directory layout
+Maven defines a standard directory layout so that it's easy to work with any maven project.
+
+For example 
+* `src/main/java` - Source code
+* `src/main/resources` - Resources
+* `src/test/java` - Test source code
+* `README.txt`
+
+## Dependency management
+Maven helps with defining, creating and maintaining reproducible builds. Dependecies are defined in the projects `pom.xml`.
+
+### Scop
+
+### Management
+
+
+
 * dependencies
 * SNAPSHOT version
 
