@@ -4,11 +4,10 @@ date: 2022-04-03T00:00:00+00:00
 layout: post
 permalink: /incorrect-wsl2-date-after-sleep/
 categories:
-  - wsl
+  - wsl2
 tags:
   - wsl2
-  - date
-  - time
+  - windows
 ---
 
 There is a bug in WSL2 when windows wakes up after sleep which results in invalid date. 
