@@ -11,14 +11,16 @@ tags:
   - theory
 ---
 
-The Big O notation is a simplified method for describing an algorithms effiency. 
+The Big O notation is a simplified method for describing an algorithms effiency. It's not measured in time but in a functions growth rate. Two function with the same growth rate is represented by the same Big O notation.
 
 ## Constant time O(1)
-An algorithm that isn't dependenant on the size of the input executes at instant time. In Big O notation this is written as `O(1)` and pronounced as `Big O of one`
+An algorithm that isn't dependenant on the size of the input executes at instant time. In Big O notation this is written as `O(1)` and pronounced as `Big O of one`. An example of constant time operation is thow look up a value in a hashmap by a key.
 
 ## Logarithmic time O(log n)
+A binary search algorithm is done in logarithmic time.
 
 ## Linear time O(N)
+An example of linear time operation can be to look for something in a unsorted array.
 
 ## Exponential time O(N^2)
 
