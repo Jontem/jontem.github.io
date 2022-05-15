@@ -16,22 +16,17 @@ The Big O notation is a simplified method for describing an algorithms effiency.
 ## Constant time O(1)
 An algorithm that isn't dependenant on the size of the input executes at instant time. In Big O notation this is written as `O(1)` and pronounced as `Big O of one`. An example of constant time operation is thow look up a value in a hashmap by a key.
 
-## Constant time O(1)
-An algorithm that isn't dependenant on the size of the input executes at instant time. In Big O notation this is written as `O(1)` and is pronounced as `Big O of one`
-
 ## Logarithmic time O(log n)
 A binary search algorithm is done in logarithmic time.
 
 ## Linear time O(N)
 An example of linear time operation can be to look for something in a unsorted array.
 
-## Exponential time O(N^2)
+## Quadratic time O(N^2)
+Simple sorting algorithms like bubble sort is done in quadratic time.
 
+## Exponential time O(c^2)
+An exact solution to the travelling salesman problem using dynamic programming is done in exponential time
 
-* Doesn't care about the computers performance
 * Largest win
 * Constants removed when higher complexity exists
-* O(1) Constant time
-* O(log n) logarithmic time
-* O(N) Linear time
-* O(N^2) exponential time
