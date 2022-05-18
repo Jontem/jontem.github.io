@@ -10,7 +10,7 @@ tags:
   - kubernetes
 ---
 
-If you want access to a terminal for kubernetes linux node you can use the `kubectl debug` command. With this you don't need ssh port(22) accessible from the internet and you also don't need to specify a password or a SSH key.
+If you want access to a terminal for a kubernetes linux node you can use the `kubectl debug` command. With this you don't need ssh port(22) accessible from the internet and you also don't need to specify a password or a SSH key.
 
 ```sh
 # Start a privileged debug container on the node
