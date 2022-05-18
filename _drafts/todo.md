@@ -11,6 +11,5 @@ tags:
   - assembly
 ---
 
-* kubernetes series
-* gcc
-* x86 little endian
+* debug node azure aks `chroot /host`
+* debug dns resolving dig +trace 
