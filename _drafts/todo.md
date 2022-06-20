@@ -11,5 +11,7 @@ tags:
   - assembly
 ---
 
-* debug node azure aks `chroot /host`
-* debug dns resolving dig +trace 
+* debug dns resolving dig +trace
+* Nats
+* Mapped types typescript
+* Conditional types
