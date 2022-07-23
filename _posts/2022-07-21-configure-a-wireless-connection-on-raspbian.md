@@ -30,7 +30,6 @@ country=SE
 network={
      ssid="my ssid"
      psk="mypassword"
-     scan_ssid=1
 }
 ```
 
