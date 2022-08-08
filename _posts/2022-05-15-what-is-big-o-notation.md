@@ -1,5 +1,5 @@
 ---
-title: What is Big O noation
+title: What is Big O notation
 date: 2022-05-15T00:00:00+00:00
 layout: post
 permalink: /what-is-big-o-notation/
