@@ -7,6 +7,8 @@ I'm a full stack developer with great knowledge in devops and infrastructure. I'
 
 I've a broad knowledge in IT and I'm good problem solver. I like learning new things and share what I learn.
 
+In a development team I often work as a technical architect and leading the development.
+
 On the infrastructure side here's some things that I've great experience of
 - Vmware
 - IBM storage
