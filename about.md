@@ -26,11 +26,10 @@ As a developer I've worked a lot with
 - .NET C#
 - Containers
 - GraphQL, gRPC, REST, Protobuf
-- OIDC
+- OIDC, Keycloak, IdentityServer
 - NATS, Redis
 - git
 - Gitlab, Gitlab CI, Github
-- Keycloak
 
 
 ## Youtube
