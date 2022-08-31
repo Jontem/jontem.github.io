@@ -22,7 +22,7 @@ disabled_plugins = ["io.containerd.grpc.v1.cri"]
 Then start containerd and use the `ctr` cli.
 ```
 # To list the containers and find the container id from the logs
-ctr -n k8s.io containers
+ctr -n k8s.io containers ls
 
 # Delete the container
 ctr -n k8s.io containers rm <containter id>
