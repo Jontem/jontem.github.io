@@ -17,10 +17,10 @@ Read more about it here: [Announcing built-in container support for the .NET SDK
 
 Here are some things worth noting:
 
-- Right now this is an initial preview
-- You can't publish to a remote registry just yet. But this will be available with full release of .NET7
+- Right now this is an initial preview.
+- You can't publish to a remote registry just yet. But this will be available with the full release of .NET7.
 - There is no way to do `RUN` commands. You'll have to create base image and set the build property `ContainerBaseImage`.
-- The way to configure container build is through msbuild properties
-- Right now the linux x64 is the only supported containers. Windows container will be supported with the full release of .NET 7
+- The way to configure things in the `Dockerfile` like entrypoint or environment variables is through msbuild project properties
+- Right now linux x64 is the only supported container os. Windows containers will be supported with the full release of .NET 7
 - Before the release of .NET 7 you'll need to install the nuget package to get this feature `dotnet add package Microsoft.NET.Build.Containers`
 
