@@ -9,27 +9,21 @@ I've a broad knowledge in IT and I'm good problem solver. I like learning new th
 
 In a development team I often work as a technical architect and leading the development.
 
-On the infrastructure side here's some things that I've great experience of
-- Vmware
-- IBM storage
-- Linux, Windows server
-- Kubernetes, Containers, Docker
-- NGINX, IIS
-- SQL server, Postgres
-- Azure
-- FreeNas/TrueNas
-- pfSense
-
-As a developer I've worked a lot with
-- JavaScript/TypeScript
-- React, AngularJS 
-- .NET C#
+Some of the languages and technologies I've worked with:
+- JavaScript/TypeScript, React 
+- .NET C#, ASP.NET core
 - Containers
 - GraphQL, gRPC, REST, Protobuf
-- OIDC, Keycloak, IdentityServer
-- NATS, Redis
 - git
 - Gitlab, Gitlab CI, Github
+- OIDC, Keycloak
+- NATS, Redis
+- Opentelemetry, Grafana, Loki
+- Azure
+- NGINX, IIS
+- Kubernetes, Containers, Docker
+- SQL server, Postgres
+- Linux, Windows server
 
 
 ## Youtube
