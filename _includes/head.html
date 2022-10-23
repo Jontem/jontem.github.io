@@ -14,24 +14,4 @@
 
   gtag('config', 'G-9EBGTG5XQK');
 </script>
-  <script>
-    function isLocalHost() {
-      var hostName = window.location.hostname;
-      return hostName === "127.0.0.1" || hostName === "localhost";
-    }
-    window.onload = () => {
-      if (isLocalHost()) {
-        return;
-      }
-      var url = window.location.href;
-      var key = localStorage.getItem("key");
-      if (!key) {
-        key = Math.random().toString(36).slice(2);
-        localStorage.setItem("key", key);
-      }
-      fetch(
-        `https://mourtada-se.azurewebsites.net/api/visit?key=${key}&path=${url}`
-      );
-    };
-  </script>
 </head>
