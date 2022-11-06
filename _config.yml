@@ -12,10 +12,19 @@ plugins:
 jekyll-crosspost_to_medium:
   enabled: false
 
-twitter_username: jmourtada
-github_username:  jontem
-linkedin_username: jonathanmourtada
+# twitter_username: jmourtada
+# github_username:  jontem
+# linkedin_username: jonathanmourtada
 
-mastodon:
-- username: jontem
-  instance: mastodon.se
+# mastodon:
+# - username: jontem
+#   instance: mastodon.se
+
+minima:
+  social_links:
+    twitter: jmourtada
+    github: jontem
+    linkedin: jonathanmourtada
+    mastodon:
+      - username: jontem
+        instance: mastodon.se
