@@ -15,3 +15,7 @@ jekyll-crosspost_to_medium:
 twitter_username: jmourtada
 github_username:  jontem
 linkedin_username: jonathanmourtada
+
+mastodon:
+- username: jontem
+  instance: mastodon.se
