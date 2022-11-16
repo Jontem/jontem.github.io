@@ -5,13 +5,30 @@
   {%- seo -%} <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url
   }}"> {%- feed_meta -%} {%- if jekyll.environment == 'production' and
   site.google_analytics -%} {%- include google-analytics.html -%} {%- endif -%}
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9EBGTG5XQK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-9EBGTG5XQK"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag('config', 'G-9EBGTG5XQK');
-</script>
+    gtag("config", "G-9EBGTG5XQK");
+  </script>
+  <script
+    src="https://unpkg.com/@telemetrydeck/sdk/dist/telemetrydeck.min.js"
+    defer
+  ></script>
+  <script>
+    window.td = window.td || [];
+    td.push(
+      ["app", "1904C2C6-5665-4E45-8DEF-42D1E51D4498"],
+      ["user", "anonymous"],
+      ["signal"]
+    );
+  </script>
 </head>
