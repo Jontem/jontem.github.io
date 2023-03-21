@@ -51,6 +51,7 @@ This is what I think:
 - Think about the developers in your team. What questions would they have and try to answer them
 - If your commit is a bugfix write about the bug, when it happens and why.
 - If it's a feature write about the process of implementing it
+- If it's a refactor. Write why it improves code
 
 ## Good reading materials
 
