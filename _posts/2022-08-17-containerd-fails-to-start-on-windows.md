@@ -26,6 +26,9 @@ ctr -n k8s.io containers ls
 
 # Delete the container
 ctr -n k8s.io containers rm <containter id>
+
+# Or delete all containers
+ctr -n k8s.io containers rm $(ctr -n k8s.io containers ls -q)
 ```
 
 Remove the line added to `config.toml` and restart containerd and everything should work again
